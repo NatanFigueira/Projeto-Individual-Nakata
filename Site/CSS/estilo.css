@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 20px 0;
+    color: #FFF;
+
+}
+
+.container {
+    width: 80%; 
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titulo {
+    font-size: 26pt;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+li{
+    margin: 10px;
+}
+
+.inicio {
+    background-image: url("Img/Design\ sem\ nome\(1\).jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.info {
+
+}
