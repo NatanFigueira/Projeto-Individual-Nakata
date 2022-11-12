@@ -1,43 +1,172 @@
+/*GERAL*/
+
+@import url('https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Roboto:ital,wght@0,400;0,500;0,900;1,400&display=swap');
+
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: "roboto", sans-serif;
 }
+
+body {
+    background-color: #FEB42F;
+}
+
+/*HEADER*/
 
 header {
-    padding: 20px 0;
-    color: #FFF;
-
+    position: absolute;
+    width: 100%;
 }
 
-.container {
-    width: 80%; 
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.titulo {
-    font-size: 26pt;
-}
-
-ul {
+header ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
 }
 
-li{
-    margin: 10px;
+header li {
+    margin: 25px;
+    font-weight: 500;
 }
 
-.inicio {
-    background-image: url("Img/Design\ sem\ nome\(1\).jpg");
-    background-size: cover;
+.containerHeader {
+    color: #FEB42F;
+    width: 95%;
+    height: 85%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Kolker Brush", serif;
+    width: 2.6vw;
+    font-size: 50pt;
+    border-bottom: 3px solid #FEB42F;
+    margin-left: 30px;
+}
+
+/*SECTION HOME*/
+
+.home {
     height: 100vh;
+    background-color: #731E25;
+    background-image: url("../Img/Nakata/NakataHome3-removebg-preview.png");
+    background-size: cover;
+    color: #FEB42F;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
-.info {
+.escritoHome {
+    font-family: "Kolker Brush", serif;
+    font-size: 25pt;
+    margin-bottom: 100px;
+    margin-left: 800px;
+    width: 100vw;
+    height: 50vh;
+}
 
+.NAKATA {
+    font-family: "Kolker Brush", serif;
+    font-size: 100pt;
+}
+
+/*SECTION VALORES*/
+
+.valores {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tituloValor {
+    font-weight: 500;
+    font-size: 40pt;
+    margin-top: 55px;
+    margin-bottom: 0;
+}
+
+.containerValores {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0px 70px 0px 70px;
+}
+
+.divalores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13pt;
+    text-align: justify;
+    width: 20%;
+    padding: 10px;
+}
+
+.icones {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    text-align: center;
+}
+
+/*FOOTER*/
+
+footer {
+    width: 100%;
+    background-color: #731E25;
+    height: 25vh;
+}
+
+.containerFooter {
+    /* font-family: "roboto", sans-serif; */
+    color: #FEB42F;
+    width: 95%;
+    height: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.divAreaSite {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer ul {
+    font-size: 9pt;
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+footer li {
+    padding: 1px;
+}
+
+.iconesMidiaNakata {
+    display: flex;
+    justify-content: center;
+}
+
+.iconeFooter {
+    width: 40px;
+    margin: 0px 6px
 }
