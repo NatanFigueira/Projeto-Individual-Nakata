@@ -1,0 +1,14 @@
+.cadastro {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../Img/Nakata/noticia1.jpg");
+    background-position: top;
+    background-size: cover;
+}
+
+.divFormulario {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
