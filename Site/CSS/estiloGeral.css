@@ -6,15 +6,17 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "roboto", sans-serif;
+    --cor-principal: #731E25;
+    --cor-secundaria: #FEB42F;
 }
 
 body {
-    background-color: #FEB42F;
+    background-color: var(--cor-secundaria);
     overflow-x: hidden;
 }
 
 a {
-    color: #FEB42F;
+    color: var(--cor-secundaria);
     text-decoration: none;
 }
 
@@ -43,7 +45,7 @@ header li {
 }
 
 .containerHeader {
-    color: #FEB42F;
+    color: var(--cor-secundaria);
     width: 95%;
     height: 85%;
     margin: auto;
@@ -58,13 +60,13 @@ header li {
     font-family: "Kolker Brush", serif;
     width: 2.6vw;
     font-size: 50pt;
-    border-bottom: 3px solid #FEB42F;
+    border-bottom: 3px solid var(--cor-secundaria);
     margin-left: 30px;
 }
 
 .agora {
-    background-color: #FEB42F;
-    color: #731E25;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
     border-radius: 20px;
     padding: 7px;
 }
@@ -73,13 +75,13 @@ header li {
 
 footer {
     width: 100%;
-    background-color: #731E25;
+    background-color: var(--cor-principal);
     height: 25vh;
 }
 
 .containerFooter {
     /* font-family: "roboto", sans-serif; */
-    color: #FEB42F;
+    color: var(--cor-secundaria);
     width: 95%;
     height: 85%;
     margin: auto;

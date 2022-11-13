@@ -1,3 +1,8 @@
+* {
+    --cor-principal: #000;
+    --cor-secundaria: #fff;
+}
+
 .login {
     height: 100vh;
     width: 100vw;
