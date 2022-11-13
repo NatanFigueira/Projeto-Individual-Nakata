@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/estiloGeral.css" />
+    <link rel="stylesheet" href="../CSS/Cadastro-Login.css" />
     <link rel="stylesheet" href="../CSS/Login.css" />
     <title>Hidetoshi Nakata</title>
 </head>
@@ -20,9 +21,21 @@
             </div>
             <div class="nav">
                 <ul>
-                    <a href="../HTML/index.html"><li>HOME</li></a>
-                    <a href="../HTML/login.html"><li class="agora">LOGIN</li></a>
-                    <a href="../HTML/cadastro.html"><li>CADASTRO</li></a>
+                    <li>
+                        <a href="../HTML/index.html">
+                            HOME
+                        </a>
+                    </li>
+                    <li class="agora">
+                        <a href="../HTML/login.html">
+                            LOGIN
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../HTML/cadastro.html">
+                            CADASTRO
+                        </a>
+                    </li>
                     <li>QUIZ</li>
                     <li>MEU PERFIL</li>
                 </ul>
@@ -30,9 +43,23 @@
         </div>
     </header>
 
-    <section class="login">
+    <section class="homeLoginCadastro">
         <div class="capa">
-            <!-- <input type="text"> -->
+            <div class="formulario">
+                <span class="tituloForm">LOGIN</span>
+                <div class="containerInput">
+                    <div class="entradas">
+                        Email
+                        <input type="text" id="iptEmail" maxlength="45" required>
+                    </div>
+                    <div class="entradas">
+                        Senha
+                        <input type="password" id="iptSenha" maxlength="16" required>
+                    </div>
+                </div>
+                <button class="botao">ENTRAR</button>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -44,9 +71,15 @@
             <div class="divAreaSite">
                 PÁGINAS
                 <ul>
-                    <a href="../HTML/index.html"><li>HOME</li></a>
-                    <a href="../HTML/login.html"><li>LOGIN</li></a>
-                    <a href="../HTML/cadastro.html"><li>CADASTRO</li></a>
+                    <a href="../HTML/index.html">
+                        <li>HOME</li>
+                    </a>
+                    <a href="../HTML/login.html">
+                        <li>LOGIN</li>
+                    </a>
+                    <a href="../HTML/cadastro.html">
+                        <li>CADASTRO</li>
+                    </a>
                     <li>QUIZ</li>
                     <li>MEU PERFIL</li>
                 </ul>

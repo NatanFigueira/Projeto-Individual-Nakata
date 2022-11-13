@@ -1,5 +1,10 @@
 /*SECTION HOME*/
 
+* {
+    --cor-principal: #731E25;
+    --cor-secundaria: #FEB42F;
+}
+
 .home {
     height: 100vh;
     background-color: #731E25;
@@ -9,8 +14,6 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
 }
 
 .escritoHome {

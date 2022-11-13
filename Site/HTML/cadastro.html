@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/estiloGeral.css" />
+    <link rel="stylesheet" href="../CSS/Cadastro-Login.css" />
     <link rel="stylesheet" href="../CSS/Cadastro.css" />
     <title>Hidetoshi Nakata</title>
 </head>
@@ -20,15 +21,21 @@
             </div>
             <div class="nav">
                 <ul>
-                    <a href="../HTML/index.html">
-                        <li>HOME</li>
-                    </a>
-                    <a href="../HTML/login.html">
-                        <li>LOGIN</li>
-                    </a>
-                    <a href="../HTML/cadastro.html">
-                        <li class="agora">CADASTRO</li>
-                    </a>
+                    <li>
+                        <a href="../HTML/index.html">
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../HTML/login.html">
+                            LOGIN
+                        </a>
+                    </li>
+                    <li class="agora">
+                        <a href="../HTML/cadastro.html">
+                            CADASTRO
+                        </a>
+                    </li>
                     <li>QUIZ</li>
                     <li>MEU PERFIL</li>
                 </ul>
@@ -36,17 +43,35 @@
         </div>
     </header>
 
-    <section class="cadastro">
-        <form class="formulario">
-            <span class="tituloCadastro">CADASTRO</span>
+    <section class="homeLoginCadastro">
+        <div class="formulario">
+            <span class="tituloForm">CADASTRO</span>
             <div class="containerInput">
-                <input id="iptNome" class="entradas" placeholder="Nome">
-                <input id="iptEmail" class="entradas" placeholder="Email">
-                <input id="iptDataNasc" class="entradas" placeholder="Data de Nascimento">
-                <input id="iptSenha" class="entradas" placeholder="Senha">
-                <input id="iptConfirma" class="entradas" placeholder="Confirmação de Senha">
+                <div class="entradas">
+                    Nome
+                    <input type="text" id="iptNome" maxlength="45" required>
+                </div>
+                <div class="entradas">
+                    Email
+                    <input type="text" id="iptEmail" maxlength="45" required>
+                </div>
+                <div class="entradas">
+                    Data de nascimento
+                    <input type="text" id="iptDataNasc" onfocus="(this.type='date')"
+                        onblur="if (!this.value) this.type='text'">
+                </div>
+                <div class="entradas">
+                    Senha
+                    <input type="password" id="iptSenha" maxlength="16" required>
+                </div>
+                <div class="entradas">
+                    Confirmar senha
+                    <input type="password" id="iptConfirma" maxlength="16" required>
+
+                </div>
             </div>
-        </form>
+            <button class="botao">CADASTRAR</button>
+        </div>
     </section>
 
     <footer>

@@ -3,48 +3,21 @@
     --cor-secundaria: #fcd206;
 }
 
-.cadastro {
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    height: 100vh;
-    width: 100vw;
+.homeLoginCadastro {
     background-image: url("../Img/Nakata/noticia1.jpg");
-    background-position: top;
-    background-size: cover;
+    justify-content: right;
 }
 
 .formulario {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
     margin-top: 70px;
-    margin-right: 70px;
-    border-radius: 10px;
-    width: 38%;
-    height: 65%;
-    background-color: var(--cor-principal);
+    margin-right: 115px;
+    height: 84%;
 }
 
-.tituloCadastro {
-    color: var(--cor-secundaria);
-    font-size: 20pt;
-    font-weight: 500;
-    margin-top: 50px;
+.botao {
+    height: 9%;
 }
 
-.containerInput {
-    margin-top: 17px;
-    width: 76%;
-}
-
-.entradas {
-    font-size: 15pt;
-    margin: 12px 0px;
-    color: white;
-    border: none;
-    border-bottom: var(--cor-secundaria) 2px solid;
-    background-color: rgba(0, 0, 0, 0%);
-    width: 400px;
+.botao:hover {
+    background-color: rgba(252, 210, 6, 70%);
 }

@@ -6,8 +6,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "roboto", sans-serif;
-    --cor-principal: #731E25;
-    --cor-secundaria: #FEB42F;
 }
 
 body {
@@ -39,11 +37,6 @@ header li {
     font-weight: 500;
 }
 
-.capa {
-    height: 100%;
-    background-color: rgba(0, 0, 0, 35%);
-}
-
 .containerHeader {
     color: var(--cor-secundaria);
     width: 95%;
@@ -71,6 +64,10 @@ header li {
     padding: 7px;
 }
 
+.agora a{
+    color: var(--cor-principal);
+}
+
 /*FOOTER*/
 
 footer {
@@ -80,7 +77,6 @@ footer {
 }
 
 .containerFooter {
-    /* font-family: "roboto", sans-serif; */
     color: var(--cor-secundaria);
     width: 95%;
     height: 85%;
