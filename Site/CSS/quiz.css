@@ -1,0 +1,15 @@
+
+* {
+    --cor-principal: #fff;
+    --cor-secundaria: #000;
+}
+
+.quiz {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../Img/Nakata/nakataHD2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    border-bottom: 3px solid var(--cor-secundaria);
+}
