@@ -16,7 +16,6 @@ resposta1 char(1),
 resposta2 char(1),
 resposta3 char(1),
 resposta4 char(1),
-resposta5 char(1),
 foreign key (fkUsuario) references Usuario (idUsuario),
 primary key (idTentativa, fkUsuario)
 );
