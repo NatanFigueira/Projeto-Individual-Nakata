@@ -1,0 +1,35 @@
+* {
+    --cor-principal: rgba(255, 255, 255, 90%);
+    --cor-secundaria: #000;
+}
+
+.principal {
+    height: 100vh;;
+    width: 100vw;
+    background-color: var(--cor-principal);
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.containerRanking {
+    text-align: center;
+    margin-right: 155px;
+    margin-top: 50px;
+}
+
+.cabecalhoRanking {
+    color: var(--cor-principal);
+    background-color: var(--cor-secundaria);
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+.ranking {
+    margin-bottom: 14px;
+}

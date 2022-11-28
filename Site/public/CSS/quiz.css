@@ -1,0 +1,112 @@
+* {
+    --cor-principal: rgba(255, 255, 255, 90%);
+    --cor-secundaria: #000;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.homeQuiz {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--cor-principal);
+    background-image: url(../Img/Nakata/nakataHD2-removebg-preview.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-right: 175px;
+    width: 25%;
+}
+
+.enunciado {
+    font-size: 17px;
+    text-align: center;
+}
+
+.containerRespostas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoes {
+    margin-left: 30px;
+}
+
+.vaiVolta {
+    height: 40px;
+}
+
+#divSetaVai {
+    cursor: pointer;
+}
+
+.alternativa {
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    border: 1px solid var(--cor-secundaria);
+    margin: 8px;
+    padding: 15px;
+    font-size: 15px;
+    transition-duration: 0.1s;
+}
+
+#botaoSubmit {
+    height: 35px;
+    padding: 0;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    display: none;
+    transition-duration: 0.9s;
+}
+
+
+
+.alternativa:hover {
+    font-size: 17px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.respondido {
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    border: 1px solid var(--cor-principal);
+    color: var(--cor-principal);
+    background-color: var(--cor-secundaria);
+    margin: 8px;
+    padding: 15px;
+    font-size: 15px;
+}
+
+.resultados {
+    border: 3px solid var(--cor-secundaria);
+    text-align: center;
+    padding: 25px;
+}
+
+.imgRefaz {
+    margin-right: 5px;
+    height: 20px;
+}
+
+.divIcones {
+    text-align: center;
+    height: 20px;
+}

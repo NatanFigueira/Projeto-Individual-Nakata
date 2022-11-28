@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/estiloGeral.css" />
+    <link rel="stylesheet" href="CSS/feedback.css" />
+    <title>Hidetoshi Nakata</title>
+    <script src="./js/funcoes.js"></script>
+</head>
+
+<body>
+
+
+    <header>
+        <div id="container" class="containerHeader">
+            <div id="titulo" class="logo">
+                N
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            LOGIN
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cadastro.html">
+                            CADASTRO
+                        </a>
+                    </li>
+                    <li>
+                        <a href="quiz.html">
+                            QUIZ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meuPerfil.html">
+                            RANKING
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="homefeedback">
+        <div class="feedback">
+            <form action="">
+                <h2>FEEDBACK</h2> <br>
+                <input id="radio" class="radio" type="radio" name="radio" value="Manutenção">Manutenção
+                <input id="radio" class="radio" type="radio" name="radio" value="Crescimento">Crescimento <br>
+                <label for="titulo">Titulo</label><br>
+                <input type="text" id="titulo" name="titulo"><br>
+                <label for="conteudo">Feedback</label><br>
+                <textarea type="text" id="conteudo" placeholder="Digite aqui sua sugestão"></textarea><br>
+                <button onclick="enviar()">ENVIAR</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="containerFooter">
+            <div class="logo">
+                N
+            </div>
+            <div class="divAreaSite">
+                PÁGINAS
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            LOGIN
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cadastro.html">
+                            CADASTRO
+                        </a>
+                    </li>
+                    <li>
+                        <a href="quiz.html">
+                            QUIZ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meuPerfil.html">
+                            RANKING
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="divAreaSite">
+                MAIS SOBRE NAKATA
+                <ul class="iconesMidiaNakata">
+                    <li><a href="https://www.instagram.com/hidetoshi_nakata_/" target="_blank"><img
+                                src="Img/Icone/InstaQuiz.png" class="iconeFooter"></a></li>
+                    <li><a href="https://www.sofascore.com/player/hidetoshi-nakata/2027" target="_blank"><img
+                                src="Img/Icone/Sofa.webp" class="iconeFooter"></a></li>
+                    <li><a href="https://www.transfermarkt.com.br/hidetoshi-nakata/profil/spieler/5875"
+                            target="_blank"><img src="Img/Icone/Transfermarkt.png" class="iconeFooter"></a></li>
+                </ul>
+            </div>
+            <div class="divAreaSite">
+                CRIADOR
+                <ul>
+                    <li>NATAN NASCIMENTO FIGUEIRA</li>
+                    <li>11 94266-9955</li>
+                    <li>natan.figueira@sptech.school</li>
+                </ul>
+            </div>
+            <div class="divAreaSite">
+                Todos os direitos reservados &copy;
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    function enviar() {
+        var tituloVar = document.querySelector('input[name="titulo"]').value;
+        var tipoVar = document.querySelector('input[name="radio"]:checked').value;
+        var conteudoVar = conteudo.value;
+
+        if (sessionStorage.ID_USUARIO != undefined) {
+            fetch("/quiz/feedback", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    tipoServer: tipoVar,
+                    tituloServer: tituloVar,
+                    conteudoServer: conteudoVar,
+                    idUsuarioServer: sessionStorage.ID_USUARIO
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    window.location = "meuPerfil.html";
+                    alert("Obrigado pelo feedback :)")
+
+                    limparFormulario();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+            return false;
+        } else {
+            alert("Faça login antes de poder enviar seu feedback!");
+        }
+    }
+</script>

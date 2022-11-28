@@ -1,0 +1,123 @@
+/*GERAL*/
+
+@import url('https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Roboto:ital,wght@0,400;0,500;0,900;1,400&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "roboto", sans-serif;
+}
+
+body {
+    background-color: var(--cor-secundaria);
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+/*HEADER*/
+
+header {
+    position: absolute;
+    width: 100%;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header li {
+    margin: 25px;
+    font-weight: 500;
+}
+
+.containerHeader {
+    color: var(--cor-secundaria);
+    width: 95%;
+    height: 85%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Kolker Brush", serif;
+    width: 2.6vw;
+    font-size: 50pt;
+    border-bottom: 3px solid var(--cor-secundaria);
+    margin-left: 30px;
+}
+
+.agora {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    border-radius: 20px;
+    padding: 7px;
+}
+
+.agora a {
+    color: var(--cor-principal);
+}
+
+/*FOOTER*/
+
+footer {
+    width: 100%;
+    background-color: var(--cor-principal);
+    height: 25vh;
+    border-top: 3px solid var(--cor-secundaria);
+}
+
+.containerFooter {
+    color: var(--cor-secundaria);
+    width: 95%;
+    height: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.divAreaSite {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer ul {
+    font-size: 9pt;
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+footer li {
+    padding: 1px;
+}
+
+.iconesMidiaNakata {
+    display: flex;
+    justify-content: center;
+}
+
+.iconeFooter {
+    width: 40px;
+    margin: 0px 6px;
+    transition-duration: 0.4s;
+}
+
+.iconeFooter:hover {
+    width: 43px;
+}

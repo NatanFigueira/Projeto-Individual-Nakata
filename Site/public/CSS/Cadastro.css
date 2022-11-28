@@ -1,0 +1,46 @@
+* {
+    --cor-principal: #2a3885;
+    --cor-secundaria: #fcd206;
+}
+
+.homeLoginCadastro {
+    background-image: url("../Img/Nakata/noticia1.jpg");
+    justify-content: right;
+}
+
+.formulario {
+    margin-top: 70px;
+    margin-right: 115px;
+    height: 84%;
+}
+
+.botao {
+    height: 9%;
+}
+
+.botao:hover {
+    background-color: rgba(252, 210, 6, 70%);
+}
+
+.alerta_erro {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 300px;
+}
+
+.card_erro {
+    display: none;
+    background-color: var(--cor-principal);
+    color: white;
+    width: 230px;
+    border-radius: 4px;
+    border: var(--cor-secundaria) 3px solid;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.card_erro #mensagem_erro {
+    font-weight: 500;
+    font-size: 20px;
+}

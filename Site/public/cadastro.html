@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/estiloGeral.css" />
+    <link rel="stylesheet" href="CSS/Cadastro-Login.css" />
+    <link rel="stylesheet" href="CSS/Cadastro.css" />
+    <title>Hidetoshi Nakata</title>
+    <script src="JS/funcoes.js"></script>
+</head>
+
+<body>
+
+
+    <header>
+        <div id="container" class="containerHeader">
+            <div id="titulo" class="logo">
+                N
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            LOGIN
+                        </a>
+                    </li>
+                    <li class="agora">
+                        <a href="cadastro.html">
+                            CADASTRO
+                        </a>
+                    </li>
+                    <li>
+                        <a href="quiz.html">
+                            QUIZ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meuPerfil.html">
+                            RANKING
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="homeLoginCadastro">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+        <div class="formulario">
+            <span class="tituloForm">CADASTRO</span>
+            <div class="containerInput">
+                <div class="entradas">
+                    Nome
+                    <input type="text" id="iptNome" maxlength="45" required>
+                </div>
+                <div class="entradas">
+                    Email
+                    <input type="text" id="iptEmail" maxlength="64" required>
+                </div>
+                <div class="entradas">
+                    Data de nascimento
+                    <input type="text" id="iptDataNasc" onfocus="(this.type='date')"
+                        onblur="if (!this.value) this.type='text'">
+                </div>
+                <div class="entradas">
+                    Senha
+                    <input type="password" id="iptSenha" maxlength="16" required>
+                </div>
+                <div class="entradas">
+                    Confirmar senha
+                    <input type="password" id="iptConfirma" maxlength="16" required>
+
+                </div>
+            </div>
+            <button class="botao" onclick="verifica()">CADASTRAR</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="containerFooter">
+            <div class="logo">
+                N
+            </div>
+            <div class="divAreaSite">
+                PÁGINAS
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            LOGIN
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cadastro.html">
+                            CADASTRO
+                        </a>
+                    </li>
+                    <li>
+                        <a href="quiz.html">
+                            QUIZ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meuPerfil.html">
+                            RANKING
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="divAreaSite">
+                MAIS SOBRE NAKATA
+                <ul class="iconesMidiaNakata">
+                    <li><a href="https://www.instagram.com/hidetoshi_nakata_/" target="_blank"><img
+                                src="Img/Icone/InstaCadastro.png" class="iconeFooter"></a></li>
+                    <li><a href="https://www.sofascore.com/player/hidetoshi-nakata/2027" target="_blank"><img
+                                src="Img/Icone/Sofa.webp" class="iconeFooter"></a></li>
+                    <li><a href="https://www.transfermarkt.com.br/hidetoshi-nakata/profil/spieler/5875"
+                            target="_blank"><img src="Img/Icone/Transfermarkt.png" class="iconeFooter"></a></li>
+                </ul>
+            </div>
+            <div class="divAreaSite">
+                CRIADOR
+                <ul>
+                    <li>NATAN NASCIMENTO FIGUEIRA</li>
+                    <li>11 94266-9955</li>
+                    <li>natan./figueira@sptech.school</li>
+                </ul>
+            </div>
+            <div class="divAreaSite">
+                Todos os direitos reservados ©
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+    function verifica() {
+
+        const regexEmail = /\S+@\S+\.\S+/;
+        const verificaEmail = {
+            formato: regexEmail.test(iptEmail.value),
+            tamanho: iptEmail.value.length <= 64 
+        };
+
+        const regexSenha = /[0-9]/;
+        const verificaSenha = {
+            tamanho: iptSenha.value.length >= 8,
+            numero: regexSenha.test(iptSenha.value)
+        }
+        
+        if (iptNome.value == "" || iptEmail.value == "" || iptSenha.value == "" || iptConfirma.value == "" || iptDataNasc.value == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Todos os campos precisam ser preenchidos!";
+    
+            return false;
+        }
+        else if (!verificaEmail.formato || !verificaEmail.tamanho){            
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Email inválido";
+            
+            return false;
+        }
+        else if (!verificaSenha.numero || !verificaSenha.tamanho){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "A senha deve conter 8 caracteres e pelo menos um número";
+            
+            return false;
+        }
+        else if (iptSenha.value != iptConfirma.value){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Senha e confirmação de senha devem ser iguais!";
+            
+            return false;
+        }
+        else{
+            cadastrar();
+            sumirMensagem();
+        }
+    }
+
+
+    function cadastrar() {
+        var nomeVar = iptNome.value;
+        var emailVar = iptEmail.value;
+        var senhaVar = iptSenha.value;
+        var confirmacaoSenhaVar = iptConfirma.value;
+        var dataNascVar = iptDataNasc.value;
+
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                dataNascServer: dataNascVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+</script>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/estiloGeral.css" />
+    <link rel="stylesheet" href="CSS/quiz.css" />
+    <title>Hidetoshi Nakata</title>
+</head>
+
+<body>
+
+
+    <header>
+        <div id="container" class="containerHeader">
+            <div id="titulo" class="logo">
+                N
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            LOGIN
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cadastro.html">
+                            CADASTRO
+                        </a>
+                    </li>
+                    <li class="agora">
+                        <a href="quiz.html">
+                            QUIZ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meuPerfil.html">
+                            RANKING
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="homeQuiz">
+        <div id="divQuiz" class="quiz">
+            <h2>PERGUNTA <span id="numeroPergunta">1</span></h2>
+            <span class="enunciado" id="enunciado">Em qual país nasceu Nakata?</span>
+            <div id="perguntas" class="containerRespostas">
+                <div id="divSetaVolta"><img src="Img/Icone/setaVoltaCinza.png" class="vaiVolta" onclick=""></div>
+                <div class="botoes">
+                    <button id="alternativa1" class="alternativa" onclick="proxima(1)">Brasil</button>
+                    <button id="alternativa2" class="alternativa" onclick="proxima(2)">Japão</button>
+                    <button id="alternativa3" class="alternativa" onclick="proxima(3)">China</button>
+                    <button id="alternativa4" class="alternativa" onclick="proxima(4)">Austrália</button>
+                    <button id="alternativa5" class="alternativa" onclick="proxima(5)">Chile</button>
+                    <button id="botaoSubmit" class="alternativa submit" onclick="finalizar()">Finalizar</button>
+                </div>
+                <div id="divSetaVai"><img src="Img/Icone/setaProxQuiz.png" class="vaiVolta" onclick="proxima()"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="containerFooter">
+            <div class="logo">
+                N
+            </div>
+            <div class="divAreaSite">
+                PÁGINAS
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            LOGIN
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cadastro.html">
+                            CADASTRO
+                        </a>
+                    </li>
+                    <li>
+                        <a href="quiz.html">
+                            QUIZ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="meuPerfil.html">
+                            RANKING
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="divAreaSite">
+                MAIS SOBRE NAKATA
+                <ul class="iconesMidiaNakata">
+                    <li><a href="https://www.instagram.com/hidetoshi_nakata_/" target="_blank"><img
+                                src="Img/Icone/InstaQuiz.png" class="iconeFooter"></a></li>
+                    <li><a href="https://www.sofascore.com/player/hidetoshi-nakata/2027" target="_blank"><img
+                                src="Img/Icone/Sofa.webp" class="iconeFooter"></a></li>
+                    <li><a href="https://www.transfermarkt.com.br/hidetoshi-nakata/profil/spieler/5875"
+                            target="_blank"><img src="Img/Icone/Transfermarkt.png" class="iconeFooter"></a></li>
+                </ul>
+            </div>
+            <div class="divAreaSite">
+                CRIADOR
+                <ul>
+                    <li>NATAN NASCIMENTO FIGUEIRA</li>
+                    <li>11 94266-9955</li>
+                    <li>natan.figueira@sptech.school</li>
+                </ul>
+            </div>
+            <div class="divAreaSite">
+                Todos os direitos reservados &copy;
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+
+    const quiz = [{
+        pergunta: "Em qual país nasceu Nakata?",
+        alternativaA: "Brasil",
+        alternativaB: "Japão",
+        alternativaC: "China",
+        alternativaD: "Austrália",
+        alternativaE: "Chile",
+        resposta: "",
+        gabarito: 2
+    }, {
+        pergunta: "Em qual ano Nakata se aposentou?",
+        alternativaA: "2000",
+        alternativaB: "1995",
+        alternativaC: "2006",
+        alternativaD: "2001",
+        alternativaE: "2009",
+        resposta: "",
+        gabarito: 3
+    }, {
+        pergunta: "Em qual desses times Nakata não jogou?",
+        alternativaA: "Shonan Bellmare",
+        alternativaB: "AS Roma",
+        alternativaC: "Fiorentina",
+        alternativaD: "Parma",
+        alternativaE: "Juventus",
+        resposta: "",
+        gabarito: 5
+    }, {
+        pergunta: "Qual o primeiro nome de Nakata?",
+        alternativaA: "Keisuke",
+        alternativaB: "Takefusa",
+        alternativaC: "Hidetoshi",
+        alternativaD: "Daniel",
+        alternativaE: "Hiroki",
+        resposta: "",
+        gabarito: 3
+    }];
+
+    var contaPergunta = 1;
+    var perguntaAtual = quiz[contaPergunta - 1];
+
+    function proxima(respostaQuiz) {
+
+        if (respostaQuiz != undefined) {
+            perguntaAtual.resposta = respostaQuiz;
+        }
+        if (contaPergunta < quiz.length) {
+            contaPergunta++;
+            mudaPergunta();
+        }
+        checkaButton();
+    }
+
+    function volta() {
+        contaPergunta--;
+        mudaPergunta();
+    }
+
+    function mudaPergunta() {
+
+        perguntaAtual = quiz[contaPergunta - 1];
+        numeroPergunta.innerHTML = contaPergunta;
+        enunciado.innerHTML = perguntaAtual.pergunta;
+        alternativa1.innerHTML = perguntaAtual.alternativaA;
+        alternativa2.innerHTML = perguntaAtual.alternativaB;
+        alternativa3.innerHTML = perguntaAtual.alternativaC;
+        alternativa4.innerHTML = perguntaAtual.alternativaD;
+        alternativa5.innerHTML = perguntaAtual.alternativaE;
+
+        verificaSeta();
+
+        if (contaPergunta == 4) {
+            botaoSubmit.style.display = "block";
+        }
+
+        checkaButton();
+    }
+
+    function verificaSeta() {
+        if (contaPergunta == quiz.length) {
+            divSetaVai.innerHTML = `<img src="Img/Icone/setaProxCinza.png" class="vaiVolta" onclick="">`;
+            divSetaVai.style.cursor = "auto";
+        } else if (contaPergunta == 1) {
+            divSetaVolta.innerHTML = `<img src="Img/Icone/setaVoltaCinza.png" class="vaiVolta" onclick="">`;
+            divSetaVolta.style.cursor = "auto";
+        }
+        else {
+            divSetaVolta.innerHTML = `<img src="Img/Icone/setaVoltaQuiz.png" class="vaiVolta" onclick="volta()">`;
+            divSetaVai.innerHTML = `<img src="Img/Icone/setaProxQuiz.png" class="vaiVolta" onclick="proxima()">`;
+            divSetaVai.style.cursor = "pointer";
+            divSetaVolta.style.cursor = "pointer";
+        }
+    }
+
+    function checkaButton() {
+        alternativa1.classList.remove("respondido");
+        alternativa2.classList.remove("respondido");
+        alternativa3.classList.remove("respondido");
+        alternativa4.classList.remove("respondido");
+        alternativa5.classList.remove("respondido");
+
+        if (perguntaAtual.resposta == 1) {
+            alternativa1.classList.add("respondido");
+        }
+        else if (perguntaAtual.resposta == 2) {
+            alternativa2.classList.add("respondido");
+        }
+        else if (perguntaAtual.resposta == 3) {
+            alternativa3.classList.add("respondido");
+        }
+        else if (perguntaAtual.resposta == 4) {
+            alternativa4.classList.add("respondido");
+        }
+        else if (perguntaAtual.resposta == 5) {
+            alternativa5.classList.add("respondido");
+        }
+    }
+
+    function finalizar() {
+        var certas = 0;
+
+        for (var i = 0; i < quiz.length; i++) {
+            if (quiz[i].resposta == quiz[i].gabarito) {
+                certas++;
+            }
+        }
+
+        var idUsuarioVar = sessionStorage.ID_USUARIO;
+        var resposta1Var = quiz[0].resposta;
+        var resposta2Var = quiz[1].resposta;
+        var resposta3Var = quiz[2].resposta;
+        var resposta4Var = quiz[3].resposta;
+        var acertosVar = certas;
+
+        fetch("/quiz/tentativa", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkUsuarioServer: idUsuarioVar,
+                resposta1Server: resposta1Var,
+                resposta2Server: resposta2Var,
+                resposta3Server: resposta3Var,
+                resposta4Server: resposta4Var,
+                acertosServer: acertosVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                divQuiz.innerHTML = `
+                <h2>RESULTADO</h2>
+                <div id="perguntas" class="containerRespostas">
+                    <br><br><br/><h3>Acertou ${certas} de 4</h3><br><br>
+                    </div><br>
+                    <a href="quiz.html"><span class="divIcones"><img src="img/icone/refazer.png" class="imgRefaz">Refazer</a></span><br/>
+                    <a href="meuPerfil.html"><span class="divIcones"><img src="img/icone/iconeLideres.png" class="imgRefaz">Líderes</a></span> 
+                `;
+                divQuiz.classList.add("resultados");
+            } else {
+                throw ("Houve um erro ao cadastrar a tentativa!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+</script>
